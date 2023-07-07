@@ -1,0 +1,145 @@
+body {
+    width: 50%;
+    max-width: 1600px;
+    min-width: 1600px;
+    margin: 0 auto;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 60.5%;
+    font-family: sans-serif;
+}
+
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(25, 189, 3);
+    font-size: 6rem;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 800;
+    text-shadow: 5px 5px 5px rgb(240, 236, 4);
+}
+
+p {
+    color: rgb(255, 251, 0);
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 600;
+    text-shadow: 5px 5px 5px rgb(240, 4, 4);
+}
+
+label {
+    color: rgb(255, 251, 0);
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 600;
+    text-shadow: 5px 5px 5px rgb(240, 4, 4);
+}
+
+button {
+    border: 2px solid rgb(240, 4, 4);
+    padding: 10px;
+    /*espacio alrededor texto*/
+    background-color: #ddec00;
+    /*color botón*/
+    color: rgb(240, 4, 4);
+    /*color texto*/
+    text-decoration: none;
+    /*decoración texto*/
+    text-transform: uppercase;
+    /*capitalización texto*/
+    font-family: 'Helvetica', sans-serif;
+    /*tipografía texto*/
+    border-radius: 75px;
+    /*bordes redondos*/
+}
+
+.form input[type="number"] {
+    color: rgb(240, 236, 4);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 3rem;
+    font-weight: 300;
+    text-align: center;
+    background: none;
+    padding: 5px 20px;
+    margin: 12px 0;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 4px solid red;
+}
+
+input[type="text"] {
+    color: rgb(240, 236, 4);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 3rem;
+    font-weight: 300;
+    text-align: center;
+    background: none;
+    padding: 5px 20px;
+    margin: 12px 0;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 4px solid red;
+}
+
+input[type=button] {
+    border: 2px solid rgb(240, 4, 4);
+    padding: 10px;
+    /*espacio alrededor texto*/
+    background-color: #ddec00;
+    /*color botón*/
+    color: rgb(240, 4, 4);
+    /*color texto*/
+    text-decoration: none;
+    /*decoración texto*/
+    text-transform: uppercase;
+    /*capitalización texto*/
+    font-family: 'Helvetica', sans-serif;
+    /*tipografía texto*/
+    border-radius: 75px;
+    /*bordes redondos*/
+}
+
+input[type=submit] {
+    border: 2px solid rgb(240, 4, 4);
+    padding: 10px;
+    /*espacio alrededor texto*/
+    background-color: #ddec00;
+    /*color botón*/
+    color: rgb(240, 4, 4);
+    /*color texto*/
+    text-decoration: none;
+    /*decoración texto*/
+    text-transform: uppercase;
+    /*capitalización texto*/
+    font-family: 'Helvetica', sans-serif;
+    /*tipografía texto*/
+    border-radius: 75px;
+    /*bordes redondos*/
+}
+
+footer {
+    background-color: black;
+    padding: 3.5rem;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-bottom: 2rem;
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.contenido {
+    width: 50%;
+    max-width: 800px;
+    min-width: 800px;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+}

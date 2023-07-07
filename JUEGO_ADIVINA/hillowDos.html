@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>
+        Hillow Dos
+    </title>
+    <link href="CSS/style.css" rel="stylesheet">
+    </link>
+    </meta>
+    </meta>
+    </meta>
+</head>
+<center>
+
+    <body background="images\background.png">
+
+        <a href="index.html">
+            <div style="text-align:left;">
+                <img src="images/home.png" height="60px" width="60px" alt="Menú Principal">
+            </div>
+        </a>
+        <center>
+            <div class="contenido">
+                <h1>
+                    ¿ADIVINARÉ TÚ NÚMERO?
+                </h1>
+
+                <p>Piensa en un número y mientras tú le vas dando instrucciones a la máquina ella tratará de adivinar en que número pensaste. Jugando limpiamente ¿Podrás evitar que lo adivine?
+                </p>
+
+                <input id="resultado" type="text">
+                <div>
+                    <p class="ultimoResultado"></p>
+                </div>
+                <button onclick="Iniciar()">Empecemos</button>
+                <br><br>
+                <button onclick="Menor()"><<<</button>
+                <button onclick="Correcto()">Mi número</button>
+                <button onclick="Mayor()">>>></button>
+                <br><br>
+                <br><br>
+                <input type="button" value="Jugar De Nuevo" onclick="location.reload()" />
+
+                </input>
+            </div>
+        </center>
+        <script>
+            const ultimoResultado = document.querySelector('.ultimoResultado');
+            var linferior = 0;
+            var lsuperior = 1000;
+            var valorUno = 0;
+            var valorDos = 0;
+            var valorTres = 0;
+
+            function Correcto() {
+                ultimoResultado.textContent = '¡TE GANE! VUELVE A INTENTARLO';
+                ultimoResultado.style.backgroundColor = 'green';
+            }
+
+            function Iniciar() {
+                valorUno = parseInt((linferior + lsuperior) / 2);
+                resultado.value = valorUno;
+            }
+
+            function Menor() {
+                lsuperior = valorUno;
+                valorUno = parseInt((linferior + lsuperior) / 2);
+                resultado.value = valorUno;
+            }
+
+            function Mayor() {
+                valorTres = valorUno
+                valorDos = parseInt((lsuperior + valorTres) / 2);
+                resultado.value = valorDos;
+                valorUno = valorDos;
+            }
+        </script>
+    </body>
+</center>
+
+</html>

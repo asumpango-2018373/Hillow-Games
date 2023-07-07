@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hillow Uno</title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+
+<center>
+
+    <body background="images\background.png">
+        <a href="index.html">
+            <div style="text-align:left;">
+                <img src="images/home.png" height="60px" width="60px" alt="Menú Principal">
+            </div>
+        </a>
+        <div class="contenido">
+            <h1>ADIVINA EL NÚMERO</h1>
+
+            <p>La máquina ha seleccionado un número aleatorio, intenta adivinarlo, si no lo logras en 10 intentos perderas y se reiniciara el juego.
+            </p>
+
+            <div class="form">
+                <label for="guessField">Ingrese una posibilidad: </label>
+                <BR></BR>
+                <input type="number" min="1" max="1000" required id="guessField" class="guessField">
+                <input type="submit" value="Comprobar" class="guessSubmit">
+            </div>
+
+            <div class="resultParas">
+                <p class="posibilidad"></p>
+                <p class="ultimoResultado"></p>
+                <p class="bajaOSube"></p>
+            </div>
+        </div>
+
+        <script>
+            let numeroAleatorio = Math.floor(Math.random() * 1000);
+
+            const posibilidad = document.querySelector('.posibilidad');
+            const ultimoResultado = document.querySelector('.ultimoResultado');
+            const bajaOSube = document.querySelector('.bajaOSube');
+
+            const guessSubmit = document.querySelector('.guessSubmit');
+            const guessField = document.querySelector('.guessField');
+
+            let guessCount = 1;
+            let resetButton;
+
+            function validar() {
+                let numeroUsuario = Number(guessField.value);
+                if (guessCount === 1) {
+                    posibilidad.textContent = 'Intentos anteriores: ';
+                }
+                posibilidad.textContent += numeroUsuario + ' | ';
+
+                if (numeroUsuario === numeroAleatorio) {
+                    ultimoResultado.textContent = '¡Bien hecho! ¡Lo adivinaste!';
+                    ultimoResultado.style.backgroundColor = 'green';
+                    bajaOSube.textContent = '';
+                    terminarJuego();
+                } else if (guessCount === 10) {
+                    ultimoResultado.textContent = '¡No lo lograste, vuelve a intentarlo!' + 'El número era: ' + numeroAleatorio;
+                    terminarJuego();
+                } else {
+                    ultimoResultado.textContent = '¡Incorrecto!';
+                    ultimoResultado.style.backgroundColor = 'red';
+                    if (numeroUsuario < numeroAleatorio) {
+                        bajaOSube.textContent = '¡El número es mayor que tú número!';
+                    } else if (numeroUsuario > numeroAleatorio) {
+                        bajaOSube.textContent = '¡El número es menor que tú número!';
+                    }
+                }
+
+                guessCount++;
+                guessField.value = '';
+                guessField.focus();
+
+                function terminarJuego() {
+                    guessField.disabled = true;
+                    guessSubmit.disabled = true;
+                    resetButton = document.createElement('button');
+                    resetButton.textContent = 'Iniciar nuevo juego';
+                    document.body.append(resetButton);
+                    resetButton.addEventListener('click', resetGame);
+                }
+
+                function resetGame() {
+                    guessCount = 1;
+
+                    const resetParas = document.querySelectorAll('.resultParas p');
+                    for (let i = 0; i < resetParas.length; i++) {
+                        resetParas[i].textContent = '';
+                    }
+
+                    resetButton.parentNode.removeChild(resetButton);
+
+                    guessField.disabled = false;
+                    guessSubmit.disabled = false;
+                    guessField.value = '';
+                    guessField.focus();
+
+                    ultimoResultado.style.backgroundColor = 'white';
+
+                    numeroAleatorio = Math.floor(Math.random() * 100) + 1;
+                }
+            }
+            guessSubmit.addEventListener('click', validar);
+        </script>
+    </body>
+</center>
+
+</html>
